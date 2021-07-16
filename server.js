@@ -2,8 +2,8 @@ const express = require("express");
 const mongoose = require("mongoose");
 const logger = require ("morgan");
 const path = require('path');
-const apiRoutes = require('./routes/api-routes');
-const htmlRoutes = require('./routes/html-routes');
+// const apiRoutes = require('./routes/api-routes');
+// const htmlRoutes = require('./routes/html-routes');
 
 
 const PORT = process.env.PORT || 3000;
@@ -19,8 +19,21 @@ app.use(express.json());
 app.use(logger("dev"));
 app.use(express.static("public"));
 
-app.use("/api-routes",apiRoutes);
-app.use("/html-routes",htmlRoutes);
+// app.use("/api-routes",apiRoutes);
+// app.use("/html-routes",htmlRoutes);
+app.use (express.static(path.join(__dirname,'./routes')));
+
+app.get("/",(req,res) =>{    
+  res.sendFile(path.join(__dirname, './public/index.html'));
+});
+
+app.get("/exercise",(req,res) => {   
+  res.sendFile(path.join(__dirname,'./public/exercise.html'));
+});
+
+app.get("/stats",(req,res) =>{   
+  res.sendFile(path.join(__dirname,'./public/stats.html'));
+});
 
 
 app.listen(PORT, () => {
