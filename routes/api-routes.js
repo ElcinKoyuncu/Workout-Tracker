@@ -1,4 +1,4 @@
-const Workout  = require ("../models/workoutInfo.js");
+const Workout  = require ("../models/exercises");
 const router = require("express").Router();
 
 
@@ -46,3 +46,5 @@ router.put("/api/workouts/:id", ({body,params}, res) => {
             res.json(err);
         });
 });
+
+module.exports = router;
