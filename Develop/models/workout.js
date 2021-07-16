@@ -12,16 +12,16 @@ const WorkoutSchema = new mongoose.Schema({
     type: {
       type: String,
       trim:true,
-      required: "Enter the type of workout"
+      required: "Please enter exercise type"
     },
     name: {
       type: String,
       trim:true,
-      required: "Enter an exercise name"
+      required: "Please enter exercise name"
     },
     duration: {
       type: Number,
-      required: "Enter a duration for the workout"
+      required: "Please enter exercise duration"
     },
     weight: Number,
     reps: Number,
