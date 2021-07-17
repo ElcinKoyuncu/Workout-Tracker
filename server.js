@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const logger = require ("morgan");
 const path = require('path');
 const apiRoutes = require('./routes/api-routes');
-// const htmlRoutes = require('./routes/html-routes');
+
 
 
 const PORT = process.env.PORT || 3000;
@@ -22,8 +22,7 @@ app.use(logger("dev"));
 app.use(express.static("public"));
 
 app.use("/api",apiRoutes);
-// app.use("/html-routes",htmlRoutes);
-// /html-routes/exercise
+
 app.use (express.static(path.join(__dirname,'./routes')));
 
 app.get("/",(req,res) =>{    
