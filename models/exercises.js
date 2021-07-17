@@ -21,6 +21,7 @@ const WorkoutSchema = new mongoose.Schema({
     },
     duration: {
       type: Number,
+      trim:true,
       required: "Please enter exercise duration"
     },
     weight: Number,
