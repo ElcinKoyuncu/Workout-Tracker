@@ -2,7 +2,7 @@ const express = require("express");
 const mongoose = require("mongoose");
 const logger = require ("morgan");
 const path = require('path');
-// const apiRoutes = require('./routes/api-routes');
+const apiRoutes = require('./routes/api-routes');
 // const htmlRoutes = require('./routes/html-routes');
 
 
@@ -20,8 +20,9 @@ app.use(express.json());
 app.use(logger("dev"));
 app.use(express.static("public"));
 
-// app.use("/api-routes",apiRoutes);
+app.use("/api",apiRoutes);
 // app.use("/html-routes",htmlRoutes);
+// /html-routes/exercise
 app.use (express.static(path.join(__dirname,'./routes')));
 
 app.get("/",(req,res) =>{    
