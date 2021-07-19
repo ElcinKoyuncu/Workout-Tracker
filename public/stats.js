@@ -36,7 +36,15 @@ function populateChart(data) {
   let lineChart = new Chart(line, {
     type: 'line',
     data: {
-      labels,
+      labels: [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+      ],
       datasets: [
         {
           label: 'Workout Duration In Minutes',
@@ -54,6 +62,7 @@ function populateChart(data) {
         text: 'Time Spent Working Out (Last 7 days)',
       },
       scales: {
+        
         y: {
           beginAtZero: true,
         },
